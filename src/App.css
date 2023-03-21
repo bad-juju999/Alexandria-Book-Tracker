@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  background-color: brown;
+  font-family:'Courier New', Courier, monospace;
+  color: rgb(231, 225, 225);
+}
+
+.menu {
+  background-color: #393834;
+  height: 10vh;
+  width: 100vw;
+}
+
+.flex-center {
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.navbar{
+  width: 100vw;
+  position: sticky;
+  top: 0;
+}
+
+.heading {
+  height: 70vh;
+  width: 80vw;
+  background-color: #232120;
+  
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+}
+h1 {
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+  font-size: 25px;
+}
+
+.inputContainer{ 
+  background-color: #232120;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  width: 100vw;
+}
+
+/* textboxes*/
+input {
+  margin: 3px;
+}
+
+.submitButton {
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+  margin:20px;
+}
+
+.entry {
+  background-color: #393834;
+  margin: 10px;
+  height: 20vh ;
+  padding-top: 2vh;
+}
+.topTextCard {
+  font-weight: bold;
+}
+
+/* mobile first*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* words are stretching rather than just cutting out some of the page like BB or other sites*/
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+  body{
+    background-color: orange;
+  }
+  .topTextCard {
+    font-size: 22px;
+  }
+  .bottomTextCard{
+    font-size: 18px;
+  }
+  
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  body {
+    background-color: yellow;
+  }
+  .grid {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+/* Extra large devices (large laptops and desktops, 1400px and up) */
+@media (min-width:1400px) {
+  body{
+    background-color: olive;
+  }
+  .grid {
+    grid-template-columns: repeat(5,1fr);
+  }
+}
