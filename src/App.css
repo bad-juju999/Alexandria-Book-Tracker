@@ -27,7 +27,7 @@ body {
 }
 
 .heading {
-  height: 70vh;
+  height: 30vh;
   width: 80vw;
   background-color: #232120;
   
@@ -64,7 +64,7 @@ input {
 .entry {
   background-color: #393834;
   margin: 10px;
-  height: 20vh ;
+  height: 200px ;
   padding-top: 2vh;
 }
 .topTextCard {
@@ -82,9 +82,6 @@ input {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media (min-width: 768px) {
-  body{
-    background-color: orange;
-  }
   .topTextCard {
     font-size: 22px;
   }
@@ -95,18 +92,12 @@ input {
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media (min-width: 992px) {
-  body {
-    background-color: yellow;
-  }
   .grid {
     grid-template-columns: repeat(4,1fr);
   }
 }
 /* Extra large devices (large laptops and desktops, 1400px and up) */
 @media (min-width:1400px) {
-  body{
-    background-color: olive;
-  }
   .grid {
     grid-template-columns: repeat(5,1fr);
   }

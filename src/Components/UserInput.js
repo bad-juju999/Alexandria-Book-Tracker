@@ -5,8 +5,9 @@ import { useState, useEffect } from "react";
 import Entry from "../Components/Entry";
 
 function UserInput() {
-  const [entryDisplay, setEntryDisplay] = useState([]);
 
+  //on render current database is displayed through grid of <Entry/> components
+  const [entryDisplay, setEntryDisplay] = useState([]);
   useEffect(() => {
     const myDatabase = getFirestore();
     const collectionReference = collection(myDatabase, "Books");
@@ -20,7 +21,6 @@ function UserInput() {
         author={book.Author} 
         character={book.Character} 
         details={book.Details}
-        
         {...book} //do i need this anymore?
       />
       ));
@@ -30,19 +30,21 @@ function UserInput() {
   return (
     <div>
       <div className="inputContainer flex-center">
-        <form className="flex-center">
-          <label htmlFor="Title Name">Title Name:</label>
+        <form className="userForm flex-center">
+          <label htmlFor="User Input">Title Name:</label>
           <input type="text" id="titleInput"/>
 
-          <label htmlFor="Author Name">Author Name:</label>
+          <label htmlFor="User Input">Author Name:</label>
           <input type="text" id="authorInput"/>
 
-          <label htmlFor="Favorite Character">Favorite Character:</label>
+          <label htmlFor="User Input">Favorite Character:</label>
           <input type="text" id="favCharacterInput" />
 
-          <label htmlFor="Description & Extra Details">Description & Extra Details:</label>
+          <label htmlFor="User Input">Description & Extra Details:</label>
           <input type="text" id="detailsInput"/>
         </form>
+        
+        {/*adds database entry from user input and then displays it in the DOM on the entryDisplay grid */}
         <button
           className="submitButton"
           onClick={() => {
@@ -60,19 +62,21 @@ function UserInput() {
               Character: newCharacter,
               Details: newDetails,
             }).then(() => {
-              setEntryDisplay([...entryDisplay, 
+              setEntryDisplay([ 
               <Entry 
               key={newEntry + newAuthor} 
               title={newEntry} 
               author={newAuthor} 
               character={newCharacter} 
-              details={newDetails} />]);
+              details={newDetails} />,
+              ...entryDisplay
+            ]);
+            //document.querySelector('#userForm').reset(); not working.. trying to get form to clear 
             });
           }}
         >
           Submit
         </button>
-        
       </div>
       <div className="grid">{entryDisplay}</div>
     </div>
