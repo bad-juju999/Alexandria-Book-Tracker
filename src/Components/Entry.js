@@ -1,6 +1,6 @@
 //import { useState } from "react";
 import { useState } from "react";
-import { addDoc, CollectionReference, getFirestore, collection, getDocs,deleteDoc,doc } from "firebase/firestore";
+import { getFirestore, deleteDoc, doc } from "firebase/firestore";
 
 
 function Entry(props) {
@@ -12,13 +12,19 @@ function Entry(props) {
       onMouseEnter={() => setBacksideVisible(true)}
       onMouseLeave={() => setBacksideVisible(false)}
     >
+       {/*button to delete the item in database associated with the specific Entry component
+       //DOES NOT RERENDER CHANGES. useState can fix this*/}
+       
       <button className="deleteButton" 
-      onClick= {()=>{
-        //const docRef = doc(myDatabase {this is not accessible in this component}, 'Books', {need the id/ some way to reference specific item in database})
-        //deleteDoc(docRef)
-      }
-      }
+          onClick= {()=>{        
+            const docRef = doc(getFirestore(), 'Books', props.id);
+            deleteDoc(docRef);
+
+          }
+          }
       >Delete</button>
+
+      {/*on click/ hover of entry the user will see additional details of the entry */}
       {backsideVisible ? (
         <>
           <p className="topTextCard">{props.character}</p>

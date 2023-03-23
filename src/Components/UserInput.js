@@ -1,6 +1,6 @@
 //need a way to make sure u can't enter same title and author multiple times
 
-import { addDoc, CollectionReference, getFirestore, collection, getDocs } from "firebase/firestore";
+import { addDoc, CollectionReference, getFirestore, collection, getDocs, doc, deleteDoc} from "firebase/firestore";
 import { useState, useEffect } from "react";
 import Entry from "../Components/Entry";
 
@@ -8,10 +8,11 @@ function UserInput() {
 
   //on render current database is displayed through grid of <Entry/> components
   const [entryDisplay, setEntryDisplay] = useState([]);
-  useEffect(() => {
-    const myDatabase = getFirestore();
-    const collectionReference = collection(myDatabase, "Books");
+  const myDatabase = getFirestore();
+  const collectionReference = collection(myDatabase, "Books");
 
+  useEffect(() => {
+    
     getDocs(collectionReference).then((snapshot) => {
       const bookArray = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
       setEntryDisplay(bookArray.map((book) => 
@@ -25,7 +26,7 @@ function UserInput() {
       />
       ));
     });
-  }, []);
+  },[]);
 
   return (
     <div>
@@ -77,6 +78,9 @@ function UserInput() {
         >
           Submit
         </button>
+        
+       
+
       </div>
       <div className="grid">{entryDisplay}</div>
     </div>
