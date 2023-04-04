@@ -4,7 +4,7 @@ Functions / Documentation
 - Tracks all books you have read in a given period. 
 - Filters and sorts your previous entries for easy review.(feature not deployed in portfolio site)
 - Delete and Edit entries by selecting buttons on the particular entry (editing feature not deployed in portfolio site)
-- Easily recommend your friends books by sorting and filtering your library by associated details (e.g author or genres) 
+- Easily recommend your friends books by sorting and filtering your library by associated details (e.g author or genre) 
 
 Description 
 ---
