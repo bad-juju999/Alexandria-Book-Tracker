@@ -1,5 +1,5 @@
 function Menu() {
-  //THIS DOESN'T WORK. CANT USE CLASS INSTEAD OF CLASSNAME. NOT SURE HOW TO USE BOOTSTRAP IN REACT.
+  //THIS COMPONENT DOESN'T WORK. CANT USE CLASS INSTEAD OF CLASSNAME. RESEARCH IF BOOTSTRAP WILL WORK WITH REACT
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">

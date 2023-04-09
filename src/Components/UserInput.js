@@ -22,7 +22,7 @@ function UserInput() {
         author={book.Author} 
         character={book.Character} 
         details={book.Details}
-        {...book} //do i need this anymore?
+        {...book} //is this line doing anything anymore? If not, delete
       />
       ));
     });
@@ -45,7 +45,7 @@ function UserInput() {
           <input type="text" id="detailsInput"/>
         </form>
         
-        {/*adds database entry from user input and then displays it in the DOM on the entryDisplay grid */}
+        {/*adds database entry from UserInput and then displays it in the DOM on the entryDisplay grid */}
         <button
           className="submitButton"
           onClick={() => {
@@ -72,15 +72,15 @@ function UserInput() {
               details={newDetails} />,
               ...entryDisplay
             ]);
-            //document.querySelector('#userForm').reset(); not working.. trying to get form to clear 
+
+            //add functionality to clear form after submit
+            //document.querySelector('#userForm').reset(); not working, need alternate method
             });
           }}
         >
           Submit
         </button>
         
-       
-
       </div>
       <div className="grid">{entryDisplay}</div>
     </div>

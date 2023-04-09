@@ -1,3 +1,6 @@
+/*ISSUE: Resizing window, will cause some words to stretch rather than cut off */
+
+/*General Styling*/
 * {
   box-sizing: border-box; 
 }
@@ -71,14 +74,11 @@ input {
   font-weight: bold;
 }
 
-/* mobile first*/
+/* mobile first styles*/
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
-/* words are stretching rather than just cutting out some of the page like BB or other sites*/
-
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media (min-width: 768px) {

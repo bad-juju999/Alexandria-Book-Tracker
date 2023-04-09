@@ -12,8 +12,8 @@ function Entry(props) {
       onMouseEnter={() => setBacksideVisible(true)}
       onMouseLeave={() => setBacksideVisible(false)}
     >
-       {/*button to delete the item in database associated with the specific Entry component
-       //DOES NOT RERENDER CHANGES. useState can fix this*/}
+       {/*deletes specific Entry from backend database.
+       //DOES NOT RERENDER CHANGES UNTIL PAGE REFRESH. useState can fix this*/}
        
       <button className="deleteButton" 
           onClick= {()=>{        
@@ -24,7 +24,7 @@ function Entry(props) {
           }
       >Delete</button>
 
-      {/*on click/ hover of entry the user will see additional details of the entry */}
+      {/*on select of Entry component the user will see backside with additional details of the entry */}
       {backsideVisible ? (
         <>
           <p className="topTextCard">{props.character}</p>
